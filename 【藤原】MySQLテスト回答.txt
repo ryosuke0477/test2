@@ -1,0 +1,53 @@
+問題①
+
+①とは、データの集合体という意味です。
+データを関連性によって管理する①のことを②と呼びます。
+②ではすべてのデータをエクセルのような③形式で表現します。
+③は④と⑤で構成され、その要素のことを⑥と呼びます。
+②を操作するには⑦という言語を使用します。
+⑧は世界中で最もよく利用されているオープンソースの①の一つです。
+⑧にパスワードを利用してアクセスする際のコマンドは⑨です。
+⑧にはINTEGERやFLOATなどの⑩が利用できます。
+
+
+<回答＞
+①DB
+②RDB
+③二次元
+④カラム
+⑤レコード
+⑥フィールド
+⑦SQL
+⑧MySQL
+⑨mysql -u root -p
+⑩データ型
+
+
+問題②
+
+MySQLを使用して以下の問いに答えてください。
+
+coachtestというデータベースを作成してください。
+productsという商品テーブルを作成してください。
+データを挿入してください。
+商品テーブルの商品名と賞味期限のカラムを表示してください。
+250円以上または個数が3個以下の全てのカラムを表示してください
+
+＜回答＞
+create database coachtest;
+
+use coachtest;
+
+create table products(id int auto_increment primary key not null,name varchar(20) not null,price int not null,expiration_date date not null,number int not null);
+
+inset into products set name='納豆',price=250,expiration_date='2021-04-17',number=3;
+inset into products set name='豆腐',price=170,expiration_date='2021-04-23',number=2;
+inset into products set name='玉ねぎ',price=120,expiration_date='2021-04-21',number=4;
+inset into products set name='ニンニク',price=250,expiration_date='2021-04-09',number=5;
+inset into products set name='キムチ',price=300,expiration_date='2021-04-22',number=2;
+
+select name,expiration_date from products;
+
+select * from products where price>=250 or number<=3;
+
+
